@@ -1,13 +1,17 @@
-![](https://raw.githubusercontent.com/LuckPerms/branding/master/banner/banner.png "Banner")
-# LuckPerms
-[![Build Status](https://ci.lucko.me/job/LuckPerms/badge/icon)](https://ci.lucko.me/job/LuckPerms/)
+# LuckPerms-OG
+
+LuckPerms-OG is a fork of LuckPerms maintained for [TrueOG Network](https://true-og.net).
+
 [![javadoc](https://javadoc.io/badge2/net.luckperms/api/javadoc.svg)](https://javadoc.io/doc/net.luckperms/api)
-[![Maven Central](https://img.shields.io/maven-metadata/v/https/repo1.maven.org/maven2/net/luckperms/api/maven-metadata.xml.svg?label=maven%20central&colorB=brightgreen)](https://search.maven.org/artifact/net.luckperms/api)
-[![Discord](https://img.shields.io/discord/241667244927483904.svg?label=discord&logo=discord)](https://discord.gg/luckperms)
 
 LuckPerms is a permissions plugin for Minecraft servers. It allows server admins to control what features players can use by creating groups and assigning permissions.
 
-The latest downloads, wiki & other useful links can be found on the project homepage at [luckperms.net](https://luckperms.net/).
+# Changes from LuckPerms:
+
+- Removed Fabric
+- Removed Forge
+- Fixed a build error
+- Builds with TrueOG's config file.
 
 It is:
 

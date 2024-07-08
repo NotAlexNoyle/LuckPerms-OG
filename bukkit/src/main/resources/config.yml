@@ -41,7 +41,7 @@ server: global
 # - To get around this, you can use a player's uuid directly in the command, or enable this option.
 # - When this is set to 'true', the server facility is used. This may use a number of methods,
 #   including checking the servers local cache, or making a request to the Mojang API.
-use-server-uuid-cache: false
+use-server-uuid-cache: true
 
 
 
@@ -83,7 +83,7 @@ use-server-uuid-cache: false
 #
 # - A H2 database is the default option.
 # - If you want to edit data manually in "traditional" storage files, we suggest using YAML.
-storage-method: h2
+storage-method: mariadb
 
 # The following block defines the settings for remote database storage methods.
 #
@@ -99,11 +99,11 @@ data:
 
   # The name of the database to store LuckPerms data in.
   # - This must be created already. Don't worry about this setting if you're using MongoDB.
-  database: minecraft
+  database: luckperms
 
   # Credentials for the database.
-  username: root
-  password: ''
+  username: REDACTED
+  password: 'REDACTED'
 
   # These settings apply to the MySQL connection pool.
   # - The default values will be suitable for the majority of users.
@@ -132,11 +132,11 @@ data:
     # from being timed out by the database or network infrastructure, measured in milliseconds.
     # - The value should be less than maximum-lifetime and greater than 30000 (30 seconds).
     # - Setting the value to zero will disable the keepalive functionality.
-    keepalive-time: 0
+    keepalive-time: 120000
 
     # This setting controls the maximum number of milliseconds that the plugin will wait for a
     # connection from the pool, before timing out.
-    connection-timeout: 5000 # 5 seconds
+    connection-timeout: 15000 # 10 seconds
 
     # This setting allows you to define extra properties for connections.
     #
@@ -330,12 +330,12 @@ primary-group-calculation: parents-by-weight
 # - The nature of the checks are documented on the wiki under "Argument based command permissions".
 # - Argument based permissions are *not* static, unlike the 'base' permissions, and will depend upon
 #   the arguments given within the command.
-argument-based-command-permissions: false
+argument-based-command-permissions: true
 
 # If the plugin should check whether senders are a member of a given group before they're able to
 # edit the groups data or add/remove other users to/from it.
 # Note: these limitations do not apply to the web editor!
-require-sender-group-membership-to-modify: false
+require-sender-group-membership-to-modify: true
 
 # If the plugin should send log notifications to users whenever permissions are modified.
 #
@@ -703,7 +703,7 @@ skip-bulkupdate-confirmation: false
 #
 # - When set to true, bulkupdate operations (the /lp bulkupdate command) will not work.
 # - When set to false, bulkupdate operations will be allowed via the console.
-disable-bulkupdate: false
+disable-bulkupdate: true
 
 # If LuckPerms should allow a users primary group to be removed with the 'parent remove' command.
 #

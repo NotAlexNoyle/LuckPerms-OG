@@ -1,13 +1,5 @@
 pluginManagement {
     repositories {
-        maven {
-            name = 'Fabric'
-            url = 'https://maven.fabricmc.net/'
-        }
-        maven {
-            name = 'Forge'
-            url = 'https://maven.minecraftforge.net/'
-        }
         gradlePluginPortal()
     }
 }
@@ -27,10 +19,6 @@ include (
         'bukkit-legacy:loader',
         'bungee',
         'bungee:loader',
-        'fabric',
-        'forge',
-        'forge:loader',
-        'forge:forge-api',
         'nukkit',
         'nukkit:loader',
         'sponge',
