@@ -240,22 +240,13 @@ public final class CommandTester implements Consumer<Component>, Function<String
                 .map(s -> "\"" + s + "\"")
                 .collect(Collectors.joining(", "));
 
-        System.out.printf(".givenHasPermissions(%s)%n", checkedPermissions);
-        System.out.printf(".whenRunCommand(\"%s\")%n", cmd);
-
         List<String> render = this.renderBufferStream().toList();
         if (render.size() == 1) {
-            System.out.printf(".thenExpect(\"%s\")%n", render.get(0));
         } else {
-            System.out.println(".thenExpect(\"\"\"");
             for (String s : render) {
-                System.out.println("        " + s);
             }
-            System.out.println("        \"\"\"");
-            System.out.println(")");
         }
 
-        System.out.println();
         return this.clearMessageBuffer();
     }
 

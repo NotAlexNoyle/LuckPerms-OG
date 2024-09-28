@@ -57,13 +57,10 @@ public class StandaloneDependencyPreloader {
         DependencyManager dependencyManager = new DependencyManagerImpl(cacheDirectory, executorService);
 
         Set<Dependency> dependencies = new HashSet<>(Arrays.asList(Dependency.values()));
-        System.out.println("Preloading " + dependencies.size() + " dependencies...");
 
         dependencies.removeAll(RelocationHandler.DEPENDENCIES);
         dependencyManager.loadDependencies(RelocationHandler.DEPENDENCIES);
         dependencyManager.loadDependencies(dependencies);
-
-        System.out.println("Done!");
     }
 }
 

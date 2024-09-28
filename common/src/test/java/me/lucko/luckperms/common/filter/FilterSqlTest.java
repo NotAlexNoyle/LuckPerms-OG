@@ -83,9 +83,6 @@ public class FilterSqlTest {
         TestFilterMongoBuilder sqlBuilder = new TestFilterMongoBuilder();
         sqlBuilder.visit(filters);
 
-        System.out.println(sqlBuilder.builder().toReadableString());
-        System.out.println(sqlBuilder.builder().toQueryString());
-
         assertEquals(expectedSql, sqlBuilder.builder().toReadableString());
         assertEquals(expectedSqlParams, sqlBuilder.builder().toQueryString());
     }

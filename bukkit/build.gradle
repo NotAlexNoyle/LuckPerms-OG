@@ -4,6 +4,7 @@ plugins {
 
 repositories {
     maven { url 'https://repo.papermc.io/repository/maven-public/' }
+	maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -17,10 +18,8 @@ dependencies {
         exclude(module: 'adventure-nbt')
     }
     compileOnly 'me.lucko:commodore:2.0'
-    compileOnly('net.milkbowl.vault:VaultAPI:1.7') {
-        exclude(module: 'bukkit')
-    }
-    compileOnly 'lilypad.client.connect:api:0.0.1-SNAPSHOT'
+    compileOnly "com.github.MilkBowl:VaultAPI:1.7"
+	compileOnly 'lilypad.client.connect:api:0.0.1-SNAPSHOT'
 }
 
 shadowJar {
